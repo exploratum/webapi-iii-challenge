@@ -12,9 +12,18 @@ server.get('/', (req, res) => {
 
 //custom middleware
 
+/*********************************************/
+/*            Logs user requests             */
+/*********************************************/
+
 function logger(req, res, next) {
-  console.log(`Method: ${req.method} requested on url:${req.url} at ${new Date().toISOString()}`)
+  console.log(`Method: ${req.method} requested on url:${req.url} at ${new Date().toISOString()}`);
+  next();
 };
+
+
+
+
 
 
 module.exports = server;
